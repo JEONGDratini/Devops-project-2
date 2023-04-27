@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: teddywoo/helloworld-was:1.0
+          tags: seay0/helloworld-was:1.0
