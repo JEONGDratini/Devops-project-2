@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: seay0/helloworld-was:1.0
+          tags: ${{ secrets.DOCKER_USERNAME1 }}/helloworld-was:1.0
