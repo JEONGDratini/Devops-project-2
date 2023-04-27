@@ -9,13 +9,17 @@ services:
     ports: 
       - '27017:27017'
     environment:
-      MONGO_INITDB_ROOT_USERNAME : seay0
-      MONGO_INITDB_ROOT_PASSWORD : ocean1220
-      
+      MONGO_INITDB_ROOT_USERNAME: seay0
+      MONGO_INITDB_ROOT_PASSWORD: ocean1220
+
   fastify: 
     image: seay0/helloworld-was:1.1
     restart: always
     ports: 
       - '3000:3000'
+    depends_on:
+    - mongo
     environment:
-      MONGO_URL: 'mongodb://localhost:27017'
+      MONGO_USERNAME: seay0
+      MONGO_PASSWORD: ocean1220
+      MONGO_HOSTNAME: mongo
