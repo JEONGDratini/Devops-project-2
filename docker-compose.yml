@@ -1,0 +1,19 @@
+version: '1.0'
+services:
+  backend:
+    image: romencia/helloworld-was:1.0
+    restart: 'always'
+    container_name: server
+    ports:
+      - "3000:3000"
+  mongo:
+    image: mongo
+    restart: 'always'
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: 'root'
+      MONGO_INITDB_ROOT_PASSWORD: 'example'
+    volumes:
+      - ./mongodb-data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
