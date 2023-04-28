@@ -3,7 +3,7 @@ name: Push Registry
 on:
   push:
     branches:
-      - JEONGDratini3
+      - JEONGDratini5
 
 jobs:
   build_and_push:

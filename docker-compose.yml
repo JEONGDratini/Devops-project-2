@@ -13,7 +13,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
 
   fastify: 
-    image: romencia/helloworld-was:1.1
+    image: 503424096631.dkr.ecr.ap-northeast-2.amazonaws.com/project2-container-repo:d000e697bb750d17eb69ce4c64219eb49e7e0c53
     restart: always
     ports: 
       - '3000:3000'
