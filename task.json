@@ -1,0 +1,59 @@
+{
+    "family": "Real_final_milestone4_was",
+    "containerDefinitions": [
+        {
+            "name": "helloworld",
+            "image": "503424096631.dkr.ecr.ap-northeast-2.amazonaws.com/project2-container-repo:32726d372a4597cd416c598803f21dd0d8259993",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "helloworld-3000-tcp",
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [
+                {
+                    "name": "MONGO_HOSTNAME",
+                    "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:503424096631:secret:project2_MongoDB_secret-CQGTey:MONGO_HOSTNAME::"
+                },
+                {
+                    "name": "MONGO_USERNAME",
+                    "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:503424096631:secret:project2_MongoDB_secret-CQGTey:MONGO_USERNAME::"
+                },
+                {
+                    "name": "MONGO_PASSWORD",
+                    "valueFrom": "arn:aws:secretsmanager:ap-northeast-2:503424096631:secret:project2_MongoDB_secret-CQGTey:MONGO_PASSWORD::"
+                }
+            ],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/Real_final_milestone4_was",
+                    "awslogs-region": "ap-northeast-2",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "executionRoleArn": "arn:aws:iam::503424096631:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
