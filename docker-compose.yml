@@ -13,7 +13,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
 
   fastify: 
-    image: 503424096631.dkr.ecr.ap-northeast-2.amazonaws.com/project2-container-repo:83dd57924c2a42c0b997a865017b889ccf2722f5
+    image: 503424096631.dkr.ecr.ap-northeast-2.amazonaws.com/project2-container-repo:32726d372a4597cd416c598803f21dd0d8259993
     restart: always
     ports: 
       - '3000:3000'
