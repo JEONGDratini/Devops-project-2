@@ -55,7 +55,7 @@ module.exports = async function (fastify, opts) {
     console.log(courier);
     //식당 정보 받아오기
     const restaurant_collection = db.collection('restaurants');
-    const restaurant_query = {_id: `${restaurantId}`};
+    const restaurant_query = {_id: new ObjectId(`${restaurantId}`)};
 
     const restaurant = await restaurant_collection.findOne(restaurant_query);
     console.log(restaurant);
