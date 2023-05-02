@@ -7,7 +7,7 @@ const { MONGO_HOSTNAME, MONGO_USERNAME, MONGO_PASSWORD } = process.env
 // MongoDB 접속 정보
 const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:27017`;
 const dbName = 'baedal';
-const collectionName = 'restaurants';
+const collectionName = 'orders';
 
 module.exports = async function (fastify, opts) {
   fastify.get('/', async function (req, reply) {
