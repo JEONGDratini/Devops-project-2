@@ -55,7 +55,7 @@ module.exports = async function (fastify, opts) {
     console.log(courier);
     //식당 정보 받아오기
     const restaurant_collection = db.collection('restaurants');
-    const restaurant_query = {_id: new ObjectId(`${restaurantId}`)};
+    const restaurant_query = { _id: new ObjectId(restaurantId)};//req.body.restaurantId
 
     const restaurant = await restaurant_collection.findOne(restaurant_query);
     console.log(restaurant);
@@ -69,17 +69,22 @@ module.exports = async function (fastify, opts) {
             estimatedDeleveryTime: 40
         },
         consumer_id: new ObjectId('64504e3a6890c3c570872978'),
-        restaurant: restaurant,
+        restaurant: {
+            name: restaurant.name,
+            address: restaurant.address
+        },
         orderedMenu: menu
-        
-        
     }
 
     const result = await order_collection.insertOne(order_query)
-
+    
+    console.log(`${result.insertedId}`);
+    const final_query = { _id: new ObjectId(`${result.insertedId}`)};
+    const final_result = await  order_collection.findOne(final_query);
+    console.log(final_result);
     client.close();
     
-    reply.code(201).send(result);
+    reply.code(201).send(final_result);
   })
 
 }
