@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 const { MONGO_HOSTNAME, MONGO_USERNAME, MONGO_PASSWORD } = process.env
 
 // MongoDB 접속 정보
-const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:27017`;
+const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}`;
 const dbName = 'baedal';
 const collectionName = 'orders';
 
