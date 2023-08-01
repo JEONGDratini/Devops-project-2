@@ -1,3 +1,4 @@
+
 # Use root/example as user/password credentials
 version: '3.1'
 
@@ -23,3 +24,4 @@ services:
       MONGO_USERNAME: root
       MONGO_PASSWORD: example
       MONGO_HOSTNAME: mongo
+

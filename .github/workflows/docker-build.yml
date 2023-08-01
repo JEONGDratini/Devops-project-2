@@ -5,6 +5,7 @@ on:
     branches:
       - JEONGDratini2
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,3 +26,4 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME2 }}/helloworld-was:1.1
+
