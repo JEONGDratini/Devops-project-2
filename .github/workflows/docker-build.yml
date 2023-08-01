@@ -3,7 +3,7 @@ name: Docker Build
 on:
   push:
     branches:
-      - main
+      - JEONGDratini2
 
 
 jobs:
@@ -25,5 +25,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME2}}/helloworld-was:1.0
+          tags: ${{ secrets.DOCKER_USERNAME2 }}/helloworld-was:1.1
 
